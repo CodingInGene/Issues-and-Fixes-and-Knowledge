@@ -12,3 +12,33 @@ NoReverse at / -
         return HttpResponseRedirect('')     #returns this first
         
     return render(request,'crudhome.html')  #Cannot render the page
+
+    Try this method-
+        1.Make temp website. make at urls.py (let's say- 'redirect')
+
+        2.After clicking submit btn in html redirect to that site (If home 
+         url is 'localhost:8000/home' then redirect to 'redirect' but in 'urls.py'
+         it will be 'home/redirect'.)
+
+        3.The views.py will be->
+            def home(request):
+                #Redirecting to a temp site to store data and then 
+                #again redirecting to home via html button
+                return render(request,'crudhome.html')
+
+            def redirected(request):
+                d={
+                    "name":request.GET.get('name'),
+                    "title":request.GET.get('title'),
+                    "desc":request.GET.get('desc')
+                }
+                print(d)
+                if request.method == "GET" and request.GET.get('name') != "":
+                    Student.objects.create(**d)
+                    print(d)
+                
+                return redirect('homepage') #redirect uses name of the page in 'urls'
+
+        So the method is-
+            Home - form submission - redirect to temp site -
+            -> store data - redirect to home
