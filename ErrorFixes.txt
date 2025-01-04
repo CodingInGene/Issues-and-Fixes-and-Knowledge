@@ -3,6 +3,7 @@
 IntegrityError-
     Check if your table has data in it and if you are trying to input
     same ID or any unique constraints multiple times.
+    Clear all data or any specific then try.
 
 NoReverse at / -
     use of 'Redirect'- redirect('')
@@ -17,8 +18,8 @@ NoReverse at / -
         1.Make temp website. make at urls.py (let's say- 'redirect')
 
         2.After clicking submit btn in html redirect to that site (If home 
-         url is 'localhost:8000/home' then redirect to 'redirect' but in 'urls.py'
-         it will be 'home/redirect'.)
+         url is 'localhost:8000/home' then redirect to 'redirect', in 'urls.py'
+         it will be 'redirect/'.)
 
         3.The views.py will be->
             def home(request):
@@ -41,4 +42,4 @@ NoReverse at / -
 
         So the method is-
             Home - form submission - redirect to temp site -
-            -> store data - redirect to home
+            -> store data - redirect to main page
