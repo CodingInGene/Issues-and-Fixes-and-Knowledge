@@ -1,0 +1,14 @@
+    Django-
+
+IntegrityError-
+    Check if your table has data in it and if you are trying to input
+    same ID or any unique constraints multiple times.
+
+NoReverse at / -
+    use of 'Redirect'- redirect('')
+    like this-
+    if request.method == "GET":
+        #Student.objects.create(**d)
+        return HttpResponseRedirect('')     #returns this first
+        
+    return render(request,'crudhome.html')  #Cannot render the page
