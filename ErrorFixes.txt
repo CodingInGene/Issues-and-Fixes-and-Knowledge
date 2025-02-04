@@ -86,6 +86,36 @@ useEffect(()=>{
       setData(d);
     }
   });
+  
+  
+ 3.
+ Objects Are Not Valid as a React Child - error in next js-
+ 
+ response from server - {name:"avoy", age:"23"}
+ 
+ in next js -
+ export default function Home() {
+  const [data,setData] = useState();
+  useEffect(() => {
+    async function getData(){
+      const response = fetch("http://localhost:8080/api");
+      const jsonData = await Promise.resolve((await response).json());
+      setData(jsonData);
+      console.log(jsonData);
+    }
+
+    getData();
+  },[]);
+  return (
+    <div>
+      <h1>{JSON.stringify(data)}</h1>	** This will not work because to print in h1 string is needed not JSON- use stringify
+    </div>
+  );
+}
+
+Solution-
+ <h1>{JSON.stringify(data)}</h1>
+
 
 
 
