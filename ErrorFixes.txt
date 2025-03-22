@@ -115,6 +115,14 @@ useEffect(()=>{
 
 Solution-
  <h1>{JSON.stringify(data)}</h1>
+ 
+ 
+
+**	Snapd removed by mistake but not completely removed-
+sudo systemctl stop var-snap-firefox-common-host\\x2dhunspell.mount
+sudo systemctl disable var-snap-firefox-common-host\\x2dhunspell.mount
+sudo apt remove --purge snapd
+sudo apt install snapd
 
 
 
