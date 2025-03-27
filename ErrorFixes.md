@@ -1,4 +1,4 @@
-**	Django-
+	**Django** -
 
 IntegrityError-
     Check if your table has data in it and if you are trying to input
@@ -49,7 +49,7 @@ NoReverse at / -
 
 
 
-**	Node JS-
+	**Node JS** -
 
 1.
 Setup backend for azure sql-
@@ -118,7 +118,7 @@ Solution-
  
  
 
-**	Snapd removed by mistake but not completely removed-
+	**Snapd removed by mistake but not completely removed** -
 sudo systemctl stop var-snap-firefox-common-host\\x2dhunspell.mount
 sudo systemctl disable var-snap-firefox-common-host\\x2dhunspell.mount
 sudo apt remove --purge snapd
