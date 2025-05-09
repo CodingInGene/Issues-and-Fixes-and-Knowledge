@@ -126,4 +126,14 @@ sudo apt install snapd
 
 
 
+	**Create a smooth line from scatter plots(linear regression)** -
+import numpy as np
+from scipy.interpolate import interp1d
+
+c=interp1d(xtest,Ypredict,kind="cubic")	**create interpolation object, and pass x,y dataset. Here it is x test data and y prediction data**
+xtest_smooth=np.linspace(xtest.min(),xtest.max(),500)	**use linspace to evenly space the points. Given x(min), x(max), interval**
+ytest_smooth=c(xtest_smooth)	**Use the c object to transform y  axis points**
+
+
+
 
